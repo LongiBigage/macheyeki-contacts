@@ -4,20 +4,25 @@ module.exports = {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
-  theme: {
-    
-    colors: {
-      'primary':'#EDF25C',
-      'secondary':'#D9AE5F',
-      'tertiary':'#D9967E',
-      'darker':'#0D0D0D',
-      'highlight':'#400101'
-    },
-    fontFamily: {
-      sans: ['Poppins', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
-    },
-    extend: {},
+  daisyui: {
+    darkTheme: "dark",
+    themes: [
+      {
+        mytheme: {
+          "primary": "#1EB854",
+          "secondary": "#1FD65F",
+          "accent": "#D99330",
+          "neutral": "#110E0E",
+          "base-100": "#171212",
+          "info": "#3ABFF8",
+          "success": "#36D399",
+          "warning": "#FBBD23",
+          "error": "#F87272",
+        },
+      },
+    ],
   },
-  // plugins: [require("daisyui")],
+  plugins: [
+    require('daisyui')
+  ],
 }

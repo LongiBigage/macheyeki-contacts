@@ -1,17 +1,31 @@
 <template>
   <div class="bg-darker h-screen font-sans">
-    <h1 class="text-lg font-bold underline text-primary p-4 text-center">
-      <ion-icon name="skull-outline" class="animate-pulse text-tertiary pr-1"></ion-icon>
-      Hello Contacts
-      <ion-icon name="skull-outline" class="animate-pulse text-tertiary pl-1"></ion-icon>
-    </h1>
+    <navBar class="text-primary" :navItems="navItems"></navBar>
+    <div>
+      <slot/>
+    </div>
+    <footerBar></footerBar>
   </div>
 </template>
 
 <script>
-
+import navBar from './components/main/navBar.vue';
+import footerBar from './components/main/footerBar.vue';
 export default {
   name: 'AppLayout',
+  components: {
+    navBar,
+    footerBar
+  },
+  data() {
+    return {
+      navItems: [
+        { name: "Home", icon: "home", link: "" },
+        { name: "MyContacts", icon: "users", link: "" },
+        { name: "Profile", icon: "user", link: "" },
+      ]
+    }
+  },
   setup() {  }
 }
 </script>
